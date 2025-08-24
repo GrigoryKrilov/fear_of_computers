@@ -20,20 +20,20 @@ print(cor_text)
 text_list = text_to_wordslist(cor_text)
 print(text_list)
 
-words_dict = {}
-for word in text_list:
+#words_dict = {}
+#for word in text_list:
+
+#exit()
 
 
-exit()
-
-words =sample_text.split(sep='.') 
-print(type(words)) 
-print(words) 
-for i in range(len(words)): 
-    word = words[i] 
-    print(i, word)
+#words =sample_text.split(sep='.') 
+#print(type(words)) 
+#print(words) 
+#for i in range(len(words)): 
+    #word = words[i] 
+    #print(i, word)
     #if word == 'на':  #cтрогое равенство 
-    if 'на' in word:   #наличие подстроки в строке
-        print('+' * 20)
+    #if 'на' in word:   #наличие подстроки в строке
+        #print('+' * 20)
    
-print('CHEESLOSLOV', len(words))
+#print('CHEESLOSLOV', len(words))

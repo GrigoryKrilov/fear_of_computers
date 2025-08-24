@@ -25,3 +25,7 @@ git status
  cd  поменять директорию  в терминале
  git clone  скопировать репозиторий  по ссылкеs
 
+Активация вирутального окуржения
+```
+C:\Users\user\venvs\cv\Scripts\Activate.ps1
+```

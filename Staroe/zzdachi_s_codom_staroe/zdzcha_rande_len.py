@@ -34,5 +34,5 @@ corrected_sms = '{}.{}'.format(corrected_sms_left, corrected_sms_right)
 
 calls_from_sms = str(corrected_sms)
 print(ebanaiya_sms, corrected_sms)
-full_calls_number = calls_number + calls_from_sms
+full_calls_number = calls_number+calls_from_sms
 print('calls number:', full_calls_number)  

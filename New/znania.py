@@ -170,9 +170,37 @@
 # shift +  tab  ортаная табуляция
 # """ тройныйе квычки в начале  файла и в конце комментриуют весь код файла.
 
-
+#git команды#
 # git add .
+# git add nam_file
 # git status
 # git commit -m "text comit 50 simbols"
 # git log
 # git push
+# git clone # клонирует полностью рипазиторий в путь который ты указал.
+
+
+# пошаговая инструкция для загрузки в риапазиторий изменений# 
+# cd education
+# git add  
+# git commit -am ""
+# git push
+
+
+# команды для CMD #
+# cd следующая директория
+# cd.. " название директори" что бы вернуться на одну дир назад.
+# pwd путь до директории в которой ты сейчас 
+ 
+
+#Dickt#
+
+# my_dickt = {"1": "один","2":"два"}
+
+# keys_dict = my_dickt.keys()
+# values_dict = my_dickt.values()
+
+# print(keys_dict,values_dict)
+
+
+# print(my_dict.values())

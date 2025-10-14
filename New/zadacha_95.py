@@ -1,21 +1,14 @@
-# def up_letter (text):
-#     result = text[0].upper() + text[1:]
-#     return result
-
-
-# print(up_letter("привет"))
-
-
-
-
 text = "привет.пока"
-result = text[0].upper() + text[1:]
-for i in range(len(text)-1):
-    if result[i] == ".":
-        next_char = result[i+1]
-        next_char_up = result[i+1].upper() + result[i+2:]
-        len_nextcharup = len(next_char)
+result = text[0].upper() + text[1:]  # Делаем первую букву заглавной
+final = ""
+i = 0
+while i < len(result):
+    if result[i] == '.':
+        # Добавляем точку и следующую букву заглавной
+        final += result[i] + result[i+1].upper()
+        i += 2  # Переходим через обработанные символы
+    else:
+        final += result[i]
+        i += 1
         
-        final = result+ next_char_up
-        print(final)
-        
+print(final)  # Выведет: Привет.Пока

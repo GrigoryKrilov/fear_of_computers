@@ -14,4 +14,4 @@ def text_upper(text):
             return final
         
 
-print(text_upper("я ни кто иной.как бэтмен "))
+print(text_upper("я никто иной.как бэтмен "))

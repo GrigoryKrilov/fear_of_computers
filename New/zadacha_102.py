@@ -7,9 +7,9 @@ import string
 datchik = True
 while  datchik :
 
-    diggits = "".join ([str(random.randint(0,9)) for _ in range(random.randint(0,5))])
-    latters_down = "".join ((random.choice(string.ascii_letters)) for _ in range(random.randint(0,5)))
-    latters_up = "".join ((random.choice(string.ascii_uppercase)) for _ in range(random.randint(0,5)))
+    diggits = "".join ([str(random.randint(0,9)) for _ in range(random.randint(0,10))])
+    latters_down = "".join ((random.choice(string.ascii_letters)) for _ in range(random.randint(0,10)))
+    latters_up = "".join ((random.choice(string.ascii_uppercase)) for _ in range(random.randint(0,10)))
     results = diggits + latters_down + latters_up
     if 15 > len(results) > 8:
         datchik = False

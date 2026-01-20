@@ -5,13 +5,9 @@ while True:
     qua_1 = input("начнем выполнение  программы: 1-да:    ")
     if qua_1 == "1":
         print("начали!")
-        
-    
     else:
         print("конец!")
         break
-
-
     while True:
             print("начало цикла")
             stud = input("введите имя студента:         ")

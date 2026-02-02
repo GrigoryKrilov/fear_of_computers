@@ -1,4 +1,6 @@
+""" забракованнно 
 # черновик задачи со словарем
+
 dict={}
 while True:
     qua_1 = input("начнем выполнение  программы: 1-да:    ")
@@ -19,11 +21,15 @@ while True:
                         break
                     else:
                         continue
-
-            
+            qua_3 = input("хотите добавить еще оценку?: да-1:")
+            if qua_3 == "1":
+                new_grades = int(input("введите новую оценку: "))
+                dict[stud].append(new_grades)
+                
 
             print("конец!")
             break
         
 
 print(dict)
+

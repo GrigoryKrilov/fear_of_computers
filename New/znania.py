@@ -178,7 +178,7 @@
 # git add .
 # git add nam_file
 # git status
-# git commit -m "text comit 50 simbols"
+# git commit -am "text comit 50 simbols"
 # git log
 # git push
 # git clone # клонирует полностью рипазиторий в путь который ты указал.

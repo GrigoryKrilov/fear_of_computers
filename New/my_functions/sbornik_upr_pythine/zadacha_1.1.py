@@ -1,38 +1,38 @@
 import json
-grades = {}
+dict = {}
 
 
 def add_student(name,marks):
-    grades[name]=marks
-    return grades
+    dict[name]=marks
+    return dict
 
 
 def add_marks():
-    name = input("Введите имя:   ")
+    name_marks = input("Введите имя:   ")
     new_marks = list(input("Введите оценки:   "))
-    if name in grades:
-        grades[name].extend(new_marks)
+    if name_marks in dict:
+        dict[name_marks].extend(new_marks)
         print("Оценки обновленны")
-        return print(grades)
+        return print(dict)
         
 def save_file(filename):
     with open(filename, 'w', encoding='utf-8') as file:
-        json.dump(grades, file, ensure_ascii=False, indent=4)
+        json.dump(dict, file, ensure_ascii=False, indent=4)
     print("Данные успешно сохранены")
-    return print(grades)
+    return print(dict)
     
 def load_file(filename):
      with open(filename, 'r', encoding='utf-8') as file:
-            global grades
-            grades = json.load(file)
+            global dict
+            dict = json.load(file)
             print("Данные успешно загруженны")
-            return print(grades)
+            return print(dict)
      
 def del_stud():
     name_del = input("введите Имя которое хотите удалить:    ")
-    del grades[name_del]
+    del dict[name_del]
     print("удаление",name_del,"успешно")
-    return print(grades)
+    return print(dict)
 
 def menu():
      while True:
@@ -46,13 +46,13 @@ def menu():
         choice= input("Ввод:  ")
         if choice =="1":
             name_1= input("Введите имя нового студента: ")
-            marks = list(input("введите его оценки:        "))
-            add_student(name_1,marks)
+            marks_1 = list(input("введите его оценки:        "))
+            add_student(name_1,marks_1)
 
         elif choice == "2":
             name = input("введите имя файаладля загрузки:  ")
             load_file(name)
-            print(grades)
+            print(dict)
         elif choice == "3":
             add_marks()
         elif choice == "4":
@@ -61,7 +61,7 @@ def menu():
         elif choice =="5":
             del_stud()
         elif choice == "6":
-            print(grades)
+            print(dict)
             break
 
 menu()

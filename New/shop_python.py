@@ -1,28 +1,34 @@
-import _sqlite3
+import sqlite3
 
-# name = input("Введите Имя:      ")
-# age = input("Введите Возраст:   ")
-# mail = input("Введите почту:    ")
-# product = input("Введите товар: ")
+name = "Фреег"#input("Введите Имя:      ")
+age = 33 #input("Введите Возраст:   ")
+email = "grff@яндексюру" # input("Введите почту:    ")
+product = "нож"#nput("Введите товар: ")
 
-# print(name,age,mail,product)
+print(name,age,email,product)
 
 
-conn = _sqlite3.connect("shop_data_baz.db")
+conn = sqlite3.connect("1_baza.db")
 cursor = conn.cursor()
 
 cursor.execute('''
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS orders (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 name TEXT NOT NULL,
-age INTEGER
+age INTEGER,
+email TEXT NOT NULL UNIQUE,
+product TEXT
 )
 ''')
 
-cursor.execute("INSERT INTO users(name, age) VALUES('oleg',25)") # execute() -подготовить выполнить insert-вставить.
+cursor.execute(
+    "INSERT INTO orders (name, age,email,product) VALUES(?, ?, ?, ?)", 
+    (name, age,email,product)
+) 
+# execute() -подготовить выполнить insert-вставить.
 conn.commit() # сохр изменрения
 
-cursor.execute("SELECT * FROM users")
+cursor.execute("SELECT * FROM orders")
 rows = cursor.fetchall()  # fetchall - выборка метод извлечения строк и возврат кортежа.
 
 
@@ -31,8 +37,8 @@ for row in rows: # row - ряд row in rows ряд за рядом.
     print(row)
 
 
-cursor.close # закарыть курсор
-conn.close # закрыть соеденение
+cursor.close() # закарыть курсор
+conn.close() # закрыть соеденение
 #  это важно что бы ресурсы не тратились.
 
 

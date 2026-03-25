@@ -12,7 +12,7 @@ def prosmotr_baza(name_baza):
     cursor.close()
     conn.close()
 
-prosmotr_baza("1_baza.db")
+# prosmotr_baza("1_baza.db")
 
 def add_new_ueser(name_baza,data_user):
     print("Создание нового пользователя.")
@@ -25,7 +25,18 @@ def add_new_ueser(name_baza,data_user):
     conn.commit()
     cursor.close()
     conn.close()
+    prosmotr_baza(name_baza)
 
-# add_new_ueser("1_baza.db","григорий 45 моемыло катана")
+# add_new_ueser("1_baza.db","фенрир 41 титан щит")
 
+def search_user_data_number(name_baza,number_user):
+    print("редактирование данных в базе",name_baza,"пользователя номер",number_user)
+    conn=sqlite3.connect(name_baza)
+    cursor=conn.cursor()
+    cursor.execute("SELECT * FROM orders where id = ?",(number_user))
+    results = cursor.fetchone()
+    print(results)
+    cursor.close()
+    conn.close()
 
+# search_user_data_number("1_baza.db","3")

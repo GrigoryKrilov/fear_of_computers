@@ -34,9 +34,33 @@ def search_user_data_number(name_baza,number_user):
     conn=sqlite3.connect(name_baza)
     cursor=conn.cursor()
     cursor.execute("SELECT * FROM orders where id = ?",(number_user))
-    results = cursor.fetchone()
+    results= cursor.fetchone()
+    # results=str(results)
     print(results)
     cursor.close()
     conn.close()
 
 # search_user_data_number("1_baza.db","3")
+
+def change_user_data(name_baza,number_user):
+    conn=sqlite3.connect(name_baza)
+    cursor=conn.cursor()
+    cursor.execute("SELECT name,age,email,product FROM orders where id = ?",(number_user))
+    results= cursor.fetchone()
+    print(results)
+    q = input("изменить данные пользователя:")
+    if q == "1":
+        print("старые данные:",results)
+        new_data= input("новые данные:")
+        split_new_data = new_data.split()
+        print(split_new_data)
+        name,age,email,product = split_new_data[0],split_new_data[1],split_new_data[2],split_new_data[3]
+        cursor.execute("UPDATE orders SET name=?,age=?,email=?,product=? WHERE id = ?", (name,age,email,product,number_user,))
+        conn.commit()
+        cursor.close()
+        conn.close()
+        prosmotr_baza(name_baza)
+    else:
+        print("ничего не именили.")
+    
+change_user_data("1_baza.db","2")

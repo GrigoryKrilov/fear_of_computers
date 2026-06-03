@@ -12,6 +12,9 @@ new_tree_1= Treebonsay("maple",5)
 # тут мы как бы вызваем эту  "функцию"
 
 
+class Needletree(Treebonsay):  # класс игольчатые деревья будут являться детским классом и он наследует от родительского всю информацию.
+    pass 
+
 # class bugs:
 #     def __init__(self,name,hazard):
         
